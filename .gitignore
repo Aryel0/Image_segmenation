@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Models and Checkpoints
+*.pth
+
+# Data (Ignore the large dataset folder)
+Segmentation/
+saved_images/
+
+# Environment and IDE
+.venv/
+.idea/
+.vscode/
+
+# Logs
+*.txt
+!README.md
