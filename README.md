@@ -2,7 +2,7 @@
 
 This repository contains a high-performance deep learning pipeline for multi-class segmentation of retinal lesions, specifically targeting signs of Diabetic Retinopathy.
 
-## 🚀 Overview
+## Overview
 
 The project implements an **Attention-Gated Residual UNet (Att-ResUNet)**. This architecture is designed to accurately detect and outline five critical lesion types in retinal images, handling the extreme class imbalance and small object sizes (like microaneurysms) typical in medical imaging.
 
@@ -13,26 +13,24 @@ The project implements an **Attention-Gated Residual UNet (Att-ResUNet)**. This 
 4.  **Optic Disc (OD)**
 5.  **Soft Exudates (SE)**
 
-## 🏗️ Architecture Features
+## Architecture Features
 
 -   **Residual Blocks**: Replaces standard convolutions to improve gradient flow and enable deeper feature extraction.
 -   **Attention Gates**: Weights the skip connections based on coarse-scale feature signals, allowing the model to "focus" on relevant areas while suppressing background noise.
 -   **Multi-Loss Strategy**: Combines **Focal Loss** (to handle class imbalance) and **Dice Loss** (to optimize spatial overlap).
 -   **Mixed Precision**: Optimized for modern GPUs using `torch.cuda.amp` (FP16) for faster training and reduced VRAM usage.
 
-## 📊 Results
+## Results
 
-Below are samples from the validation set comparing the Ground Truth (original manual grading) and the Model's predicted segmentations.
+Below is a sample from the validation set comparing the Ground Truth (original manual grading) and the Model's predicted segmentation.
 
 | Ground Truth | Prediction |
 | :---: | :---: |
 | ![y0](results/y_0.png) | ![pred0](results/pred_0.png) |
-| ![y1](results/y_1.png) | ![pred1](results/pred_1.png) |
-| ![y7](results/y_7.png) | ![pred7](results/pred_7.png) |
 
 *(Note: Grayscale intensity represents the class index 0-5).*
 
-## 🛠️ Installation & Usage
+## Installation & Usage
 
 1.  **Clone the Repository**:
     ```bash
@@ -47,7 +45,7 @@ Below are samples from the validation set comparing the Ground Truth (original m
     python train.py --train_img_dir path/to/images --train_mask_dir path/to/masks --num_epochs 10 --batch_size 4
     ```
 
-## 🧬 Dataset
+## Dataset
 
 This implementation expects a directory structure compatible with the **IDRiD Dataset**:
 -   `Original_Images/`: Contains RGB `.jpg` files.
